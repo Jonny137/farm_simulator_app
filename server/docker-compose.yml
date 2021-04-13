@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:latest
+    container_name: farm-simulator-db
+    restart: always
+    volumes:
+      - db-data:/var/lib/mysql
+    env_file:
+      - .mysql.env
+
+  backend:
+    build: .
+    image: node:12-alpine
+    working_dir: /usr/src/app
+    restart: always
+    container_name: farm-simulator-backend
+    links:
+      - db:db
+    depends_on:
+      - db
+    ports:
+      - "4000:4000"
+    command: "npm start"
+
+volumes:
+  db-data:
