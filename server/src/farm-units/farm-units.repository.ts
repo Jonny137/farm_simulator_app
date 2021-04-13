@@ -50,9 +50,8 @@ export class FarmUnitRepository extends Repository<FarmUnit> {
 
         try {
             await farmUnit.save();
-        } catch (errr) {
+        } catch {
             this.logger.error('Failed to create new farm unit.');
-            console.log(errr);
             throw new InternalServerErrorException();
         }
 
