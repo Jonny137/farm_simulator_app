@@ -17,7 +17,7 @@ import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissa
 import Snackbar from '@material-ui/core/Snackbar';
 import Alert from '@material-ui/lab/Alert';
 import AddIcon from '@material-ui/icons/Add';
-import {IconButton, Tooltip, Fab } from '@material-ui/core';
+import { IconButton, Tooltip, Fab } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 import { BASE_URL, SOCKET_URL } from '../../utils/constants';
